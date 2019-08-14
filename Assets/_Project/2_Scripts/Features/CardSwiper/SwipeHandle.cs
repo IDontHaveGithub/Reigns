@@ -38,16 +38,18 @@ public class SwipeHandle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 	{
 		if (RectTransformUtility.ScreenPointToWorldPointInRectangle(transform, data.position, data.pressEventCamera, out var _))
 		{
+            //card moves from mouse movement, but not with mouse position
 			Vector2 cardPos = transform.position;
 			cardPos.x += data.delta.x;
 			transform.position = cardPos;
 
+            //answers only become visible if swiped partly
 			var offset = cardPos.x - startPosCard.x;
 			var alphaText = offset / 200;
 			TextRight.color = new Color(0, 0, 0, alphaText);
 			TextLeft.color = new Color(0, 0, 0, -alphaText);
-
-			//TODO: use rotation
+            
+            // card rotates when swiped
 			var rotation = -offset / 30;
 			transform.eulerAngles = new Vector3(0, 0, rotation);
 		}
@@ -57,7 +59,7 @@ public class SwipeHandle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 	{
 		var imageColor = transform.GetComponent<Image>();
 
-        //swipe check
+        //swipe check through colour change
 		if (transform.localPosition.x >= Threshold)
 		{
 			RightAmount++;
@@ -108,7 +110,7 @@ public class SwipeHandle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
 		//text alpha reset
 		TextRight.color = TextLeft.color = Color.clear;
-
+        //card position and rotation reset
 		transform.position = startPosCard;
 		transform.eulerAngles = Vector3.zero;
 	}
