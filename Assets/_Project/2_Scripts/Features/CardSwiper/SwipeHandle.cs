@@ -7,15 +7,18 @@ public class SwipeHandle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 {
 	public const float Threshold = 600;
 
-	public Vector2 startPosCard;
+    public float LeftAmount = 0, RightAmount = 0;
+
+    public Vector2 startPosCard;
 	public Text Question, TextRight, TextLeft;
-	public float LeftAmount = 0, RightAmount = 0;
 
 	public new RectTransform transform => base.transform as RectTransform;
 
 	private void Start()
 	{
 		startPosCard = transform.position;
+
+        //example text
 		Question.text = "Waddup!";
 		TextRight.text = "'sup!";
 		TextLeft.text = "dafuq...";
@@ -54,6 +57,7 @@ public class SwipeHandle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 	{
 		var imageColor = transform.GetComponent<Image>();
 
+        //swipe check
 		if (transform.localPosition.x >= Threshold)
 		{
 			RightAmount++;
@@ -70,6 +74,7 @@ public class SwipeHandle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 			Debug.Log("Did not choose, back to begin position");
 		}
 
+        //example texts
 		if (LeftAmount == 0 && RightAmount == 1)
 		{
 			Question.text = "So how has your day been?";
