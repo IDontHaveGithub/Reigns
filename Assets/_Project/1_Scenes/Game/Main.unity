@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 330572972}
   - component: {fileID: 330572971}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 961239522}
   - component: {fileID: 961239521}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: StandardUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 1121294793}
   - component: {fileID: 1121294792}
   m_Layer: 5
-  m_Name: Right
+  m_Name: RightAnswer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 1308459671}
   - component: {fileID: 1308459670}
   m_Layer: 5
-  m_Name: Left
+  m_Name: LeftAnswer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -687,7 +687,7 @@ GameObject:
   - component: {fileID: 2147350432}
   - component: {fileID: 2147350434}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -762,8 +762,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPosCard: {x: 0, y: 0}
-  ChosenLeft: 0
-  ChosenRight: 0
   Question: {fileID: 486850696}
   TextRight: {fileID: 1121294792}
   TextLeft: {fileID: 1308459670}
